@@ -36,7 +36,7 @@ export default function Footer({ goto }: FooterProps) {
               </div>
               <div>
                 <div className="font-display font-800 text-white text-[15px]">
-                  PerlaSmile
+                  Smile
                 </div>
                 <div
                   className="text-[9px] font-600 tracking-widest uppercase"
@@ -158,7 +158,7 @@ export default function Footer({ goto }: FooterProps) {
                   text: "House 42, Road 11, Gulshan-2\nDhaka-1212, Bangladesh",
                 },
                 { icon: P.phone, text: "+880 1711-234567" },
-                { icon: P.mail, text: "hello@perlasmile.com.bd" },
+                { icon: P.mail, text: "hello@smile.com.bd" },
                 { icon: P.clock, text: "Sat–Thu: 9 AM – 9 PM" },
               ].map((x) => (
                 <div key={x.text} className="flex items-start gap-2.5">
@@ -191,7 +191,7 @@ export default function Footer({ goto }: FooterProps) {
 
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-[12px]" style={{ color: "#3A5A75" }}>
-            © 2026 PerlaSmile Dental Care, Dhaka. All rights reserved.
+            © 2026 Smile Dental Care, Dhaka. All rights reserved.
           </p>
           <p className="text-[12px]" style={{ color: "#3A5A75" }}>
             Reg. No. BMDC-DH-2006-0342 · DGDA Licensed

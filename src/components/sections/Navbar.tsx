@@ -60,7 +60,7 @@ export default function Navbar() {
 
           <div className="leading-tight">
             <div className="font-display font-800 text-[#0B2545] text-[15px] tracking-tight">
-              PerlaSmile
+              Smile
             </div>
             <div className="text-[9px] font-600 tracking-[0.14em] uppercase text-[#2E7D6B]">
               Dental Care · Dhaka

@@ -86,7 +86,7 @@ export default function Hero({ goto }: HeroProps) {
           {/* Trust indicators */}
           <div className="flex flex-wrap gap-6">
             {[
-              { val: "18+", sub: "Years Experience" },
+              { val: "10+", sub: "Years Experience" },
               { val: "8,000+", sub: "Happy Patients" },
               { val: "4.9 ★", sub: "Google Rating", gold: true },
             ].map((t) => (
@@ -123,7 +123,7 @@ export default function Hero({ goto }: HeroProps) {
           >
             <img
               src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=720&h=580&fit=crop&auto=format"
-              alt="Modern dental treatment room at PerlaSmile Dhaka"
+              alt="Modern dental treatment room at Smile Dhaka"
               className="w-full object-cover"
               style={{ height: 480 }}
             />

@@ -33,7 +33,7 @@ export default function Location() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="PerlaSmile Dental Clinic — Gulshan-2, Dhaka"
+              title="Smile Dental Clinic — Gulshan-2, Dhaka"
             />
           </div>
 

@@ -39,7 +39,7 @@ export default function MeetTheDentist({ goto }: MeetTheDentistProps) {
             >
               <img
                 src="https://images.unsplash.com/photo-1673865641073-4479f93a7776?w=620&h=680&fit=crop&auto=format&crop=faces,top"
-                alt="Dr. Fahmida Rahman — Lead Dentist at PerlaSmile"
+                alt="Dr. Fahmida Rahman — Lead Dentist at Smile"
                 className="w-full object-cover object-top"
                 style={{ height: 460 }}
               />
@@ -79,7 +79,7 @@ export default function MeetTheDentist({ goto }: MeetTheDentistProps) {
 
             <div className="grid grid-cols-2 gap-3 mb-7">
               {[
-                { l: "Experience", v: "18+ Years" },
+                { l: "Experience", v: "10+ Years" },
                 { l: "Specialization", v: "Prosthodontics" },
                 { l: "Cases Completed", v: "14,000+" },
                 { l: "Patient Rating", v: "4.9 / 5.0 ★" },

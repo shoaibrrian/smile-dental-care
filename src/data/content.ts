@@ -24,7 +24,7 @@ export const FEATURES = [
   {
     icon: P.award,
     title: "Experienced Specialist",
-    desc: "18+ years of expertise across all disciplines of modern dentistry and oral surgery.",
+    desc: "10+ years of expertise across all disciplines of modern dentistry and oral surgery.",
   },
   {
     icon: P.scope,
@@ -94,7 +94,7 @@ export const REVIEWS = [
 
 export const FAQS = [
   {
-    q: "How do I book an appointment at PerlaSmile?",
+    q: "How do I book an appointment at Smile?",
     a: "You can book by calling us at +880 1711-234567, sending a WhatsApp message to the same number, filling in the appointment form on this page, or visiting the clinic in person. We confirm all bookings within 2 hours and offer morning, afternoon, and evening slots.",
   },
   {
