@@ -4,27 +4,7 @@ import Stars from "./components/ui/Stars";
 import Tag from "./components/ui/Tag";
 import BACard from "./components/ui/BeforeAfterCard";
 import FAQ from "./components/ui/FaqItem";
-
-/* ═══════════════════════════════════════════════════════════
-   useReveal — IntersectionObserver scroll hook
-═══════════════════════════════════════════════════════════ */
-function useReveal() {
-  useEffect(() => {
-    const io = new IntersectionObserver(
-      (entries) =>
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            (e.target as HTMLElement).classList.add("visible");
-          }
-        }),
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
-    );
-    document
-      .querySelectorAll(".reveal, .reveal-left, .reveal-right")
-      .forEach((el) => io.observe(el));
-    return () => io.disconnect();
-  }, []);
-}
+import useReveal from "./components/hooks/useReveal";
 
 /* ═══════════════════════════════════════════════════════════
    Data
