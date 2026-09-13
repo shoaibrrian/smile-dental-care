@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Ico, P } from "./components/ui/Icon";
 import Stars from "./components/ui/Stars";
+import Tag from "./components/ui/Tag";
 
 /* ═══════════════════════════════════════════════════════════
    useReveal — IntersectionObserver scroll hook
@@ -21,17 +22,6 @@ function useReveal() {
       .forEach((el) => io.observe(el));
     return () => io.disconnect();
   }, []);
-}
-
-/* ═══════════════════════════════════════════════════════════
-   Stars
-═══════════════════════════════════════════════════════════ */
-
-/* ═══════════════════════════════════════════════════════════
-   Section label
-═══════════════════════════════════════════════════════════ */
-function Tag({ text }: { text: string }) {
-  return <span className="section-tag">{text}</span>;
 }
 
 /* ═══════════════════════════════════════════════════════════
