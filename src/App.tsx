@@ -5,7 +5,6 @@ import Tag from "./components/ui/Tag";
 import BACard from "./components/ui/BeforeAfterCard";
 import FAQ from "./components/ui/FaqItem";
 import useReveal from "./components/hooks/useReveal";
-import { FAQS } from "./data/content";
 import Navbar from "./components/sections/Navbar";
 import Hero from "./components/sections/Hero";
 import WhyChooseUs from "./components/sections/WhyChooseUs";
@@ -15,6 +14,9 @@ import AppointmentCtaBand from "./components/sections/AppointmentCtaBand";
 import BeforeAfter from "./components/sections/BeforeAfter";
 import Reviews from "./components/sections/Reviews";
 import AppointmentForm from "./components/sections/AppointmentForm";
+import Faq from "./components/sections/Faq";
+import Location from "./components/sections/Location";
+import FinalCta from "./components/sections/FinalCta";
 
 /* ═══════════════════════════════════════════════════════════
    APP
@@ -76,229 +78,13 @@ export default function App() {
       />
 
       {/* ══ FAQ ═════════════════════════════════════════════ */}
-      <section className="py-20" style={{ background: "#FAF8F4" }}>
-        <div className="max-w-2xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12 reveal">
-            <Tag text="FAQ" />
-            <h2
-              className="font-display font-700 mt-3 text-[#0B2545]"
-              style={{ fontSize: "clamp(1.7rem,3.5vw,2.5rem)" }}
-            >
-              Common Questions
-            </h2>
-            <p className="mt-3 text-[#6B7C8E] text-sm">
-              Everything you need to know before your first visit.
-            </p>
-          </div>
-          <div className="flex flex-col gap-3">
-            {FAQS.map((f) => (
-              <div key={f.q} className="reveal">
-                <FAQ q={f.q} a={f.a} />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Faq />
 
       {/* ══ LOCATION ════════════════════════════════════════ */}
-      <section id="contact" className="py-20" style={{ background: "#F3F0EA" }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-14 reveal">
-            <Tag text="Find Us" />
-            <h2
-              className="font-display font-700 mt-3 text-[#0B2545]"
-              style={{ fontSize: "clamp(1.7rem,3.5vw,2.5rem)" }}
-            >
-              Clinic Location
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-            {/* Map */}
-            <div
-              className="lg:col-span-3 reveal-left rounded-2xl overflow-hidden border"
-              style={{
-                height: 380,
-                borderColor: "#D9D3C8",
-                background: "#EAE6DD",
-              }}
-            >
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.8!2d90.4152!3d23.7924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDQ3JzMyLjYiTiA5MMKwMjQnNTQuNyJF!5e0!3m2!1sen!2sbd!4v1234567890"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="PerlaSmile Dental Clinic — Gulshan-2, Dhaka"
-              />
-            </div>
-
-            {/* Info cards */}
-            <div className="lg:col-span-2 reveal-right flex flex-col gap-3">
-              {[
-                {
-                  icon: P.map,
-                  label: "Address",
-                  val: "House 42, Road 11, Gulshan-2\nDhaka-1212, Bangladesh",
-                },
-                {
-                  icon: "M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z",
-                  label: "Landmark",
-                  val: "Near Gulshan-2 DCC Market, opposite Jamuna Bank",
-                },
-                {
-                  icon: P.clock,
-                  label: "Hours",
-                  val: "Sat–Thu: 9:00 AM – 9:00 PM\nFri: 3:00 PM – 8:00 PM",
-                },
-                {
-                  icon: P.phone,
-                  label: "Phone",
-                  val: "+880 1711-234567\n+880 2-9884-5678",
-                },
-              ].map((x) => (
-                <div
-                  key={x.label}
-                  className="flex gap-4 rounded-2xl p-4 border"
-                  style={{ background: "white", borderColor: "#EAE6DD" }}
-                >
-                  <div
-                    className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
-                    style={{ background: "#F0EDE6" }}
-                  >
-                    <svg
-                      width="17"
-                      height="17"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="#0B2545"
-                      strokeWidth="1.75"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      {(Array.isArray(x.icon) ? x.icon : [x.icon]).map(
-                        (p, i) => (
-                          <path key={i} d={p} />
-                        ),
-                      )}
-                    </svg>
-                  </div>
-                  <div>
-                    <div
-                      className="text-[10px] font-700 uppercase tracking-widest mb-0.5"
-                      style={{ color: "#6B7C8E" }}
-                    >
-                      {x.label}
-                    </div>
-                    <div
-                      className="text-sm font-500 whitespace-pre-line"
-                      style={{ color: "#1A2B3C" }}
-                    >
-                      {x.val}
-                    </div>
-                  </div>
-                </div>
-              ))}
-
-              <div className="flex gap-3 mt-1">
-                <a
-                  href="https://maps.google.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 cta-emerald flex items-center justify-center gap-2 font-600 text-white py-3 rounded-xl text-sm"
-                >
-                  <Ico d={P.map} size={15} /> Get Directions
-                </a>
-                <a
-                  href="https://wa.me/8801711234567"
-                  className="flex-1 flex items-center justify-center gap-2 font-600 text-white py-3 rounded-xl text-sm transition-all hover:-translate-y-0.5"
-                  style={{ background: "#25D366" }}
-                >
-                  <Ico d={P.whatsapp} size={15} /> WhatsApp
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Location />
 
       {/* ══ FINAL CTA ═══════════════════════════════════════ */}
-      <section
-        className="py-20"
-        style={{
-          background:
-            "linear-gradient(135deg, #071A33 0%, #0B2545 50%, #142E58 100%)",
-        }}
-      >
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center reveal">
-          <div
-            className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-7"
-            style={{
-              background: "rgba(201,162,39,0.15)",
-              border: "1px solid rgba(201,162,39,0.3)",
-            }}
-          >
-            <svg
-              width="30"
-              height="30"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#C9A227"
-              strokeWidth="1.75"
-            >
-              {(Array.isArray(P.smile) ? P.smile : [P.smile]).map((p, i) => (
-                <path key={i} d={p} />
-              ))}
-            </svg>
-          </div>
-          <h2
-            className="font-display font-800 text-white mb-4 leading-tight"
-            style={{ fontSize: "clamp(2rem,4.5vw,3.2rem)" }}
-          >
-            Take the First Step Towards
-            <br />
-            <span style={{ color: "#C9A227" }}>Your Most Confident Smile.</span>
-          </h2>
-          <p
-            className="mb-10 max-w-xl mx-auto text-base leading-relaxed"
-            style={{ color: "#7EA3C0" }}
-          >
-            Hundreds of families in Dhaka have already transformed their dental
-            health with us. Your journey begins with a single message or call.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <button
-              onClick={() => goto("appointment")}
-              className="cta-gold flex items-center gap-2 font-700 text-[#0B2545] px-7 py-4 rounded-xl text-base"
-              style={{ boxShadow: "0 8px 32px rgba(201,162,39,0.45)" }}
-            >
-              <Ico d={P.cal} size={20} /> Book Appointment
-            </button>
-            <a
-              href="tel:+8801711234567"
-              className="flex items-center gap-2 font-700 text-white px-7 py-4 rounded-xl text-base border-2 transition-all hover:-translate-y-0.5"
-              style={{
-                borderColor: "rgba(255,255,255,0.3)",
-                background: "rgba(255,255,255,0.07)",
-              }}
-            >
-              <Ico d={P.phone} size={20} /> Call Now
-            </a>
-            <a
-              href="https://wa.me/8801711234567"
-              className="flex items-center gap-2 font-700 text-white px-7 py-4 rounded-xl text-base transition-all hover:-translate-y-0.5"
-              style={{
-                background: "#25D366",
-                boxShadow: "0 8px 32px rgba(37,211,102,0.3)",
-              }}
-            >
-              <Ico d={P.whatsapp} size={20} /> WhatsApp
-            </a>
-          </div>
-        </div>
-      </section>
+      <FinalCta goto={goto} />
 
       {/* ══ FOOTER ══════════════════════════════════════════ */}
       <footer
