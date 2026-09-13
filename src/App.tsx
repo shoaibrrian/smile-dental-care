@@ -5,12 +5,15 @@ import Tag from "./components/ui/Tag";
 import BACard from "./components/ui/BeforeAfterCard";
 import FAQ from "./components/ui/FaqItem";
 import useReveal from "./components/hooks/useReveal";
-import { REVIEWS, FAQS, BA_CASES } from "./data/content";
+import { FAQS } from "./data/content";
 import Navbar from "./components/sections/Navbar";
 import Hero from "./components/sections/Hero";
 import WhyChooseUs from "./components/sections/WhyChooseUs";
 import Treatments from "./components/sections/Treatments";
 import MeetTheDentist from "./components/sections/MeetTheDentist";
+import AppointmentCtaBand from "./components/sections/AppointmentCtaBand";
+import BeforeAfter from "./components/sections/BeforeAfter";
+import Reviews from "./components/sections/Reviews";
 
 /* ═══════════════════════════════════════════════════════════
    APP
@@ -55,177 +58,13 @@ export default function App() {
       <MeetTheDentist goto={goto} />
 
       {/* ══ APPOINTMENT CTA BAND ════════════════════════════ */}
-      <section className="py-16" style={{ background: "#2E7D6B" }}>
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center reveal">
-          <h2
-            className="font-display font-800 text-white mb-3"
-            style={{ fontSize: "clamp(1.7rem,3.5vw,2.6rem)" }}
-          >
-            Ready to Start Your Journey?
-          </h2>
-          <p className="text-[#A3D4CA] mb-8 text-base">
-            Same-day appointments available. Call, WhatsApp, or book online — we
-            will confirm within 2 hours.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <button
-              onClick={() => goto("appointment")}
-              className="cta-gold flex items-center gap-2 font-700 text-[#0B2545] px-6 py-3.5 rounded-xl text-sm"
-              style={{ boxShadow: "0 6px 24px rgba(201,162,39,0.4)" }}
-            >
-              <Ico d={P.cal} size={17} /> Book Appointment
-            </button>
-            <a
-              href="https://wa.me/8801711234567"
-              className="flex items-center gap-2 font-700 text-white px-6 py-3.5 rounded-xl text-sm transition-all hover:-translate-y-0.5"
-              style={{
-                background: "#25D366",
-                boxShadow: "0 6px 24px rgba(37,211,102,0.3)",
-              }}
-            >
-              <Ico d={P.whatsapp} size={17} /> WhatsApp: +880 1711-234567
-            </a>
-            <a
-              href="tel:+8801711234567"
-              className="flex items-center gap-2 font-600 text-white px-6 py-3.5 rounded-xl text-sm border-2 transition-all hover:-translate-y-0.5"
-              style={{
-                borderColor: "rgba(255,255,255,0.4)",
-                background: "rgba(255,255,255,0.1)",
-              }}
-            >
-              <Ico d={P.phone} size={17} /> +880 1711-234567
-            </a>
-          </div>
-        </div>
-      </section>
+      <AppointmentCtaBand goto={goto} />
 
       {/* ══ BEFORE & AFTER ══════════════════════════════════ */}
-      <section className="py-20" style={{ background: "#F3F0EA" }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-14 reveal">
-            <Tag text="Real Results" />
-            <h2
-              className="font-display font-700 mt-3 text-[#0B2545]"
-              style={{ fontSize: "clamp(1.7rem,3.5vw,2.5rem)" }}
-            >
-              Before &amp; After
-            </h2>
-            <p className="mt-3 text-[#6B7C8E] max-w-lg mx-auto text-sm leading-relaxed">
-              Drag the handle left or right to see the transformation our
-              treatments deliver.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger">
-            {BA_CASES.map((c) => (
-              <div key={c.label} className="reveal">
-                <BACard {...c} />
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center mt-10 reveal">
-            <button className="cta-emerald inline-flex items-center gap-2 font-600 text-white text-sm px-6 py-3 rounded-xl">
-              View Full Gallery <Ico d={P.arrow} size={17} />
-            </button>
-          </div>
-        </div>
-      </section>
+      <BeforeAfter />
 
       {/* ══ REVIEWS ═════════════════════════════════════════ */}
-      <section id="reviews" className="py-20" style={{ background: "#FAF8F4" }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-14 reveal">
-            <Tag text="Patient Stories" />
-            <h2
-              className="font-display font-700 mt-3 text-[#0B2545]"
-              style={{ fontSize: "clamp(1.7rem,3.5vw,2.5rem)" }}
-            >
-              What Our Patients Say
-            </h2>
-
-            {/* Big Google rating */}
-            <div
-              className="inline-flex items-center gap-5 mt-7 rounded-2xl px-7 py-4 border"
-              style={{
-                background: "white",
-                borderColor: "#EAE6DD",
-                boxShadow: "0 2px 16px rgba(11,37,69,0.06)",
-              }}
-            >
-              <div className="text-right">
-                <div className="font-display font-900 text-[3.2rem] leading-none text-[#0B2545]">
-                  4.9
-                </div>
-                <div className="text-xs text-[#6B7C8E] mt-1">Google Rating</div>
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <Stars n={5} size={20} />
-                <div className="text-xs text-[#6B7C8E]">
-                  Based on 428 reviews
-                </div>
-              </div>
-              <div className="pl-4 border-l border-[#D9D3C8]">
-                <div
-                  className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-700"
-                  style={{ background: "#4285F4", color: "white" }}
-                >
-                  G
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 stagger">
-            {REVIEWS.map((r) => (
-              <div
-                key={r.name}
-                className="reveal card-lift rounded-2xl p-5 border"
-                style={{ background: "white", borderColor: "#EAE6DD" }}
-              >
-                <div className="flex items-start justify-between mb-3">
-                  <div className="flex items-center gap-3">
-                    <div
-                      className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-700 text-white shrink-0"
-                      style={{ background: "#0B2545" }}
-                    >
-                      {r.name[0]}
-                    </div>
-                    <div>
-                      <div className="font-600 text-[13px] text-[#0B2545]">
-                        {r.name}
-                      </div>
-                      <div className="text-[11px] text-[#6B7C8E]">{r.date}</div>
-                    </div>
-                  </div>
-                  <div
-                    className="w-6 h-6 rounded-full flex items-center justify-center text-[11px] font-700 text-white shrink-0"
-                    style={{ background: "#4285F4" }}
-                  >
-                    G
-                  </div>
-                </div>
-                <Stars n={r.stars} size={13} />
-                <p className="text-[13px] text-[#4A5E70] leading-relaxed mt-2">
-                  {r.text}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center mt-10 reveal">
-            <a
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 font-600 text-sm px-6 py-3 rounded-xl border-2 transition-all hover:-translate-y-0.5"
-              style={{ borderColor: "#D9D3C8", color: "#1A2B3C" }}
-            >
-              View All Google Reviews <Ico d={P.arrow} size={17} />
-            </a>
-          </div>
-        </div>
-      </section>
+      <Reviews />
 
       {/* ══ APPOINTMENT FORM ════════════════════════════════ */}
       <section
